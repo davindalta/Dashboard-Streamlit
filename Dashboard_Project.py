@@ -6,39 +6,7 @@ import streamlit as st
 
 sns.set(style='dark')
 
-# def create_sum_order_items_df(df):
-#     sum_order_items_df = df.groupby(by='product_category_name_english').agg({
-#     'order_count':'nunique'
-# }).reset_index().sort_values(by='product_category_name_english', ascending=False)
-
-
-# def create_bystate_df(df):
-#     bystate_df = bystate.groupby(by='customer_state').customer_id.nunique().reset_index()
-#     bystate_df.rename(columns={
-#         'customer_id':'customer_count'
-#     }, inplace=True)
-    
-#     return bystate_df
-
-# def create_rfm_df(df):
-#     rfm_df = df.groupby(by="customer_id", as_index=False).agg({
-#         "order_purchase_timestamp": "max",
-#         "order_count": "nunique",
-#         "payment_value": "sum"
-#     })
-#     rfm_df.columns = ["customer_id", "max_order_timestamp", "frequency", "monetary"]
-    
-#     rfm_df["max_order_timestamp"] = pd.to_datetime(rfm_df['max_order_timestamp'])
-    
-#     recent_date = df["order_date"].max()
-    
-#     rfm_df["recency"] = rfm_df["max_order_timestamp"].apply(lambda x: (recent_date - x).days)
-#     rfm_df.drop("max_order_timestamp", axis=1, inplace=True)
-    
-#     return rfm_df
-
-
-all_df = pd.read_csv('all_df.csv')
+all_df = pd.read_csv('https://drive.google.com/file/d/1l_zae-Wn_73ubMzApKZdCG0NW1coXwi-/view?usp=sharing')
 
 all_df.rename(columns={ # rename kolom product_category_name_english dan order_id
     'product_category_name_english':'products_name',
