@@ -6,7 +6,7 @@ import streamlit as st
 
 sns.set(style='dark')
 
-all_df = pd.read_html('https://kaggle.com/datasets/2870d7e7ef8f820dd38613aa089bbe881f27ceca4298010714f48a56a046d74d')
+all_df = pd.read_csv('all_df.csv')
 
 all_df.rename(columns={ # rename kolom product_category_name_english dan order_id
     'product_category_name_english':'products_name',
